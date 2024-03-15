@@ -1,0 +1,11 @@
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\Harness.exe
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\Harness.pdb
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\EPPlus.dll
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\EPPlus.Interfaces.dll
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\EPPlus.System.Drawing.dll
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\EPPlus.xml
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\obj\Debug\AutoLogin.csproj.AssemblyReference.cache
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\obj\Debug\AutoLogin.csproj.CoreCompileInputs.cache
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\obj\Debug\AutoLogin.csproj.CopyComplete
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\obj\Debug\Harness.exe
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\obj\Debug\Harness.pdb

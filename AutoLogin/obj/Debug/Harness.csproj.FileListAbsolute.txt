@@ -1,0 +1,16 @@
+C:\WPFAutomation\Harness\bin\Debug\Harness.exe
+C:\WPFAutomation\Harness\bin\Debug\Harness.pdb
+C:\WPFAutomation\Harness\obj\Debug\ResolveAssemblyReference.cache
+C:\WPFAutomation\Harness\obj\Debug\Harness.exe
+C:\WPFAutomation\Harness\obj\Debug\Harness.pdb
+M:\Desktop\Harness\bin\Debug\Harness.exe
+M:\Desktop\Harness\bin\Debug\Harness.pdb
+M:\Desktop\Harness\obj\Debug\Harness.csproj.AssemblyReference.cache
+M:\Desktop\Harness\obj\Debug\Harness.csproj.CoreCompileInputs.cache
+M:\Desktop\Harness\obj\Debug\Harness.exe
+M:\Desktop\Harness\obj\Debug\Harness.pdb
+M:\Desktop\Harness\bin\Debug\EPPlus.dll
+M:\Desktop\Harness\bin\Debug\EPPlus.Interfaces.dll
+M:\Desktop\Harness\bin\Debug\EPPlus.System.Drawing.dll
+M:\Desktop\Harness\bin\Debug\EPPlus.xml
+M:\Desktop\Harness\obj\Debug\Harness.csproj.CopyComplete
