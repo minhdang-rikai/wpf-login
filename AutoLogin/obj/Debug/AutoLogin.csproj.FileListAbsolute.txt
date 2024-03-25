@@ -9,3 +9,7 @@ M:\Documents\Rikai_mind\wpf_login\AutoLogin\obj\Debug\AutoLogin.csproj.CoreCompi
 M:\Documents\Rikai_mind\wpf_login\AutoLogin\obj\Debug\AutoLogin.csproj.CopyComplete
 M:\Documents\Rikai_mind\wpf_login\AutoLogin\obj\Debug\Harness.exe
 M:\Documents\Rikai_mind\wpf_login\AutoLogin\obj\Debug\Harness.pdb
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\WebDriver.dll
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\WebDriver.Support.dll
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\WebDriver.xml
+M:\Documents\Rikai_mind\wpf_login\AutoLogin\bin\Debug\WebDriver.Support.xml

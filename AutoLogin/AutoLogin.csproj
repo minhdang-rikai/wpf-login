@@ -17,6 +17,8 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,6 +36,11 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>CustomRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>$(SolutionDir)\Rulesets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleSetDirectories>$(ProjectDir)\Rulesets</CodeAnalysisRuleSetDirectories>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EPPlus, Version=7.0.10.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
