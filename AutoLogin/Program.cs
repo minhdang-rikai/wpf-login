@@ -51,72 +51,85 @@ namespace AutoLoginApp
             SaveToExcel(CaptureWindow(loginWindow), "LoginScreen_AfterClickLogin");
         }
 
-        // chụp ảnh full screen
-        //static Bitmap CaptureScreen()
+        static Bitmap CaptureWindow(AutomationElement element)
+        {
+            // Get the bounding rectangle of the main window
+            Rect mainWindowBounds = element.Current.BoundingRectangle;
+
+            // Find all child windows (dialogs) of the main window
+            AutomationElementCollection childWindows = element.FindAll(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition);
+
+            // Extend the bounding rectangle to include all child windows
+            foreach (AutomationElement childWindow in childWindows)
+            {
+                Rect childBounds = childWindow.Current.BoundingRectangle;
+                mainWindowBounds = Rect.Union(mainWindowBounds, childBounds);
+            }
+
+            // Calculate the width and height of the bounding rectangle
+            int width = (int)mainWindowBounds.Width;
+            int height = (int)mainWindowBounds.Height;
+
+            // Capture the entire application window including any child windows
+            Bitmap screenshot = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+
+            using (Graphics graphics = Graphics.FromImage(screenshot))
+            {
+                graphics.CopyFromScreen((int)mainWindowBounds.Left, (int)mainWindowBounds.Top, 0, 0, new System.Drawing.Size(width, height), CopyPixelOperation.SourceCopy);
+            }
+
+            return screenshot;
+        }
+
+        //static Bitmap CaptureWindow(AutomationElement windowElement)
         //{
-        //    Bitmap bmpScreen = new Bitmap(System.Windows.Forms.Screen.PrimaryScreen.Bounds.Width,
-        //                                   System.Windows.Forms.Screen.PrimaryScreen.Bounds.Height);
-        //    using (Graphics g = Graphics.FromImage(bmpScreen))
+        //    Rect windowRect = windowElement.Current.BoundingRectangle;
+
+        //    int width = (int)windowRect.Width;
+        //    int height = (int)windowRect.Height;
+
+        //    Bitmap bmp = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+
+        //    using (Graphics graphics = Graphics.FromImage(bmp))
         //    {
-        //      g.CopyFromScreen(System.Windows.Forms.Screen.PrimaryScreen.Bounds.X,
-        //                       System.Windows.Forms.Screen.PrimaryScreen.Bounds.Y,
-        //                       0, 0,
-        //                       bmpScreen.Size,
-        //                       CopyPixelOperation.SourceCopy);
+        //        graphics.CopyFromScreen((int)windowRect.Left, (int)windowRect.Top, 0, 0, new System.Drawing.Size(width, height), CopyPixelOperation.SourceCopy);
         //    }
 
-        //    return bmpScreen;
+        //    CaptureChildren(windowElement, bmp);
+
+        //    return bmp;
         //}
 
-        static Bitmap CaptureWindow(AutomationElement windowElement)
-        {
-            Rect windowRect = windowElement.Current.BoundingRectangle;
+        //static void CaptureChildren(AutomationElement parentElement, Bitmap bmp)
+        //{
+        //    AutomationElementCollection children = parentElement.FindAll(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition);
+        //    foreach (AutomationElement child in children)
+        //    {
+        //        Rect rect = child.Current.BoundingRectangle;
 
-            int width = (int)windowRect.Width;
-            int height = (int)windowRect.Height;
+        //        if (!rect.IsEmpty && rect.Width > 0 && rect.Height > 0)
+        //        {
+        //            using (Graphics graphics = Graphics.FromImage(bmp))
+        //            {
+        //                int x = (int)rect.Left - (int)parentElement.Current.BoundingRectangle.Left;
+        //                int y = (int)rect.Top - (int)parentElement.Current.BoundingRectangle.Top;
 
-            Bitmap bmp = new Bitmap(width, height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+        //                Bitmap childBmp = new Bitmap((int)rect.Width, (int)rect.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+        //                using (Graphics childGraphics = Graphics.FromImage(childBmp))
+        //                {
+        //                    childGraphics.CopyFromScreen((int)rect.Left, (int)rect.Top, 0, 0, new System.Drawing.Size((int)rect.Width, (int)rect.Height), CopyPixelOperation.SourceCopy);
+        //                }
 
-            using (Graphics graphics = Graphics.FromImage(bmp))
-            {
-                graphics.CopyFromScreen((int)windowRect.Left, (int)windowRect.Top, 0, 0, new System.Drawing.Size(width, height), CopyPixelOperation.SourceCopy);
-            }
+        //                graphics.DrawImage(childBmp, x, y);
+        //            }
+        //        }
 
-            CaptureChildren(windowElement, bmp);
-
-            return bmp;
-        }
-
-        static void CaptureChildren(AutomationElement parentElement, Bitmap bmp)
-        {
-            AutomationElementCollection children = parentElement.FindAll(TreeScope.Children, System.Windows.Automation.Condition.TrueCondition);
-            foreach (AutomationElement child in children)
-            {
-                Rect rect = child.Current.BoundingRectangle;
-
-                if (!rect.IsEmpty && rect.Width > 0 && rect.Height > 0)
-                {
-                    using (Graphics graphics = Graphics.FromImage(bmp))
-                    {
-                        int x = (int)rect.Left - (int)parentElement.Current.BoundingRectangle.Left;
-                        int y = (int)rect.Top - (int)parentElement.Current.BoundingRectangle.Top;
-
-                        Bitmap childBmp = new Bitmap((int)rect.Width, (int)rect.Height, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
-                        using (Graphics childGraphics = Graphics.FromImage(childBmp))
-                        {
-                            childGraphics.CopyFromScreen((int)rect.Left, (int)rect.Top, 0, 0, new System.Drawing.Size((int)rect.Width, (int)rect.Height), CopyPixelOperation.SourceCopy);
-                        }
-
-                        graphics.DrawImage(childBmp, x, y);
-                    }
-                }
-
-                if (TreeWalker.ControlViewWalker.GetFirstChild(child) != null)
-                {
-                    CaptureChildren(child, bmp);
-                }
-            }
-        }
+        //        if (TreeWalker.ControlViewWalker.GetFirstChild(child) != null)
+        //        {
+        //            CaptureChildren(child, bmp);
+        //        }
+        //    }
+        //}
 
         static void SaveToExcel(Bitmap screenshot, string screeenName)
         {

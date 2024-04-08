@@ -22,6 +22,12 @@ namespace WpfApp1
         public MainWindow()
         {
             InitializeComponent();
+
+            this.WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.MinWidth = 400;
+            this.MinHeight = 200;
+            this.MaxWidth = 400;
+            this.MaxHeight = 200;
         }
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)

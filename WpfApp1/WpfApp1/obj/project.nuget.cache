@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "z+d+iJ1wxUboENMRycXPwTz2gzy/I1d5V+2YUvT+gOAkImCxjZukuAf4mOuhFkx5wciqloruCzl4krEEDJFlcw==",
+  "dgSpecHash": "Aqg6sNNKWabK8wSIw1G6W+Ca6+PXf044kTJ8X787AQxwvTUPSpuH31EfCWEo8h0uXhHHidUab4YxJ+7vDKkv8w==",
   "success": true,
   "projectFilePath": "C:\\Users\\tenla\\source\\repos\\WpfApp1\\WpfApp1\\WpfApp1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\tenla\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.4\\microsoft.codeanalysis.analyzers.3.3.4.nupkg.sha512",
+    "C:\\Users\\tenla\\.nuget\\packages\\microsoft.codeanalysis.netanalyzers\\8.0.0\\microsoft.codeanalysis.netanalyzers.8.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
